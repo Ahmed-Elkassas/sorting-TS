@@ -1,0 +1,26 @@
+{
+  "name": "sec-10---design-pattern-ii-with-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Ahmed-Elkassas@github.com/Ahmed-Elkassas/sorting-TS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed-Elkassas/sorting-TS/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Elkassas/sorting-TS#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0",
+    "nodemon": "^2.0.20"
+  }
+}
