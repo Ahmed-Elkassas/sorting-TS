@@ -48,4 +48,10 @@ export class LinkedList {
         throw new Error('index is out of bounds')
     }
     
+    compare(leftIndex: number, rightIndex: number): boolean {
+        if (!this.head) {
+            throw new Error('List is empty')
+        }
+        return this.get(leftIndex).data > this.get(rightIndex).data
+    }
 }
