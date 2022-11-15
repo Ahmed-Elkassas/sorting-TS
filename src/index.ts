@@ -1,3 +1,4 @@
+import { LinkedList } from './LinkedList';
 import { StringSort } from './StringSort';
 import { NumberCollection } from './NumberCollections';
 
@@ -25,6 +26,6 @@ class Sort {
 // const numbers = new NumberCollection([10, -1, 3, 0])
 const characters = new StringSort('hAnpm')
 
-const sort = new Sort(characters)
-sort.sorter()
-console.log(characters.data)
+// const sort = new Sort(characters)
+// sort.sorter()
+// console.log(characters.data)

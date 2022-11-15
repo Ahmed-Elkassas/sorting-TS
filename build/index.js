@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const LinkedList_1 = require("./LinkedList");
 const StringSort_1 = require("./StringSort");
 class Sort {
     constructor(collection) {
@@ -18,6 +19,13 @@ class Sort {
 }
 // const numbers = new NumberCollection([10, -1, 3, 0])
 const characters = new StringSort_1.StringSort('hAnpm');
-const sort = new Sort(characters);
-sort.sorter();
-console.log(characters.data);
+// const sort = new Sort(characters)
+// sort.sorter()
+// console.log(characters.data)
+const linkedList = new LinkedList_1.LinkedList();
+linkedList.push(3);
+linkedList.push(4);
+linkedList.push(5);
+linkedList.push(6);
+console.log('index node:', linkedList.get(1));
+console.log(linkedList);
