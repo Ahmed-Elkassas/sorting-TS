@@ -10,20 +10,19 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
-        this.tail = null;
     }
-    // add(data: number): void {
-    //     const node = new Node(data)
-    //     if (!this.head) {
-    //         this.head = node
-    //         return
-    //     }
-    //     let tail = this.head;
-    //     while(tail.next) {
-    //         tail = tail.next;
-    //     }
-    //     tail.next = node;
-    // }
+    push(value) {
+        const node = new Node(value);
+        if (!this.head) {
+            this.head = node;
+            return;
+        }
+        let tail = this.head;
+        while (tail.next) {
+            tail = tail.next;
+        }
+        tail.next = node;
+    }
     get length() {
         if (!this.head) {
             return 0;
@@ -36,37 +35,42 @@ class LinkedList {
         }
         return length;
     }
-    push(value) {
-        let newNode = new Node(value);
-        if (!this.head) {
-            this.head = newNode;
-            this.tail = this.head;
-        }
-        else {
-            this.tail.next = newNode;
-            this.tail = newNode;
-        }
-        return this;
-    }
     get(index) {
         if (!this.head) {
             throw new Error('index is out of bounds');
         }
         let counter = 0;
         let node = this.head;
-        // while (node) {
-        //     if (counter === index) {
-        //       return node;
-        //     }
-        //     counter++;
-        //     node = node.next;
-        //   }
-        while (counter !== index) {
-            node = node.next;
+        while (node) {
+            if (counter === index) {
+                return node;
+            }
             counter++;
+            node = node.next;
         }
-        return node;
-        // throw new Error('Index out of bounds');
+        throw new Error('index is out of bounds');
+    }
+    compare(leftIndex, rightIndex) {
+        if (!this.head) {
+            throw new Error('List is empty');
+        }
+        return this.get(leftIndex).data > this.get(rightIndex).data;
+    }
+    swap(leftIndex, rightIndex) {
+        const leftNode = this.get(leftIndex);
+        const rightNode = this.get(rightIndex);
+        let leftHand = leftNode.data;
+        leftNode.data = rightNode.data;
+        rightNode.data = leftHand;
+    }
+    print() {
+        if (!this.head)
+            return;
+        let current = this.head;
+        while (current) {
+            console.log(current.data);
+            current = current.next;
+        }
     }
 }
 exports.LinkedList = LinkedList;
