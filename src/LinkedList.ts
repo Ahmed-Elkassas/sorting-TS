@@ -54,4 +54,14 @@ export class LinkedList {
         }
         return this.get(leftIndex).data > this.get(rightIndex).data
     }
+    swap(leftIndex: number, rightIndex: number): void {
+        const leftNode = this.get(leftIndex);
+        const rightNode = this.get(rightIndex);
+
+        let leftHand = leftNode.data;
+        leftNode.data = rightNode.data;
+        rightNode.data = leftHand;
+    }
+
+    
 }
